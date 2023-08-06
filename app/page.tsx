@@ -11,10 +11,10 @@ export default function Home() {
       <Container>
         <div className="flex items-center gap-9 lg:flex-row md: flex-col">
           <div className="flex flex-col">
-            <h1 id="fade" className={"text-6xl font-bold transition-opacity ease-in duration-700 opacity-100"}>Design</h1>
-            <h2 id="fade" className="text-6xl transition-opacity ease-in duration-700 opacity-100">Develop & Deploy</h2>
-            <h3 id="fade" className="text-3xl py-4 transition-opacity ease-in duration-700 opacity-100">Full stack developer based in Montréal</h3>
-            <div id="fade" className="transition-opacity ease-in duration-700 opacity-100">
+            <h1 id="fade" className={"text-6xl font-bold"}>Design</h1>
+            <h2 id="fade" className="text-6xl">Develop & Deploy</h2>
+            <h3 id="fade" className="text-3xl py-4">Full stack developer based in Montréal</h3>
+            <div id="fade" className="spacer">
               <Button>
                 View my projects
               </Button>

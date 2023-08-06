@@ -21,14 +21,18 @@
     return (
       <html lang="en">
         <body className={arimo.className}>
-          <div className='flex justify-center bg-[#D0E7FF]'>
+
+          {/* NAME ABOVE HEADER */}
+          <section className='flex justify-center bg-[#D0E7FF]'>
             <h1 className='p-4 text-3xl ml-6 font-black tracking-[.6rem]'>
               matthieu
             </h1>
             <h1 className='p-4 text-3xl font-thin tracking-[.5rem]'>
               fernandez
             </h1>
-          </div>
+          </section>
+          {/* END NAME SECTION */}
+
           <Navbar />
           {children}
         </body>
