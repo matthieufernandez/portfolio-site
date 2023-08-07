@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <nav className='bg-[#FBEAFF] border-y-4 border-black p-2 flex justify-between flex-col items-center z-50 md:flex-row sticky top-0 '>
+    <nav className='bg-[#FBEAFF] border-y-4 border-black p-1 flex justify-between flex-col items-center z-50 md:flex-row sticky top-0 '>
         <h1 className='text-2xl font-bold text-black group transition duration-300 ml-3'>
             <Link href="/">Home</Link>
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black"></span>
