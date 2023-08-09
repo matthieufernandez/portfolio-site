@@ -37,7 +37,7 @@ export default function Home() {
               <h3 id="fade" className="text-3xl py-4 mb-3">Full stack developer based in Montréal</h3>
               <div id="fade" className="mt-3">
                 <Button classes="">
-                  View my projects
+                  <Link href="#portfolio">View my projects</Link>
                 </Button>
               </div>
             </motion.div>
@@ -58,7 +58,7 @@ export default function Home() {
               duration: .3,
               delay: .2,
           }}>
-              <Image src={pfp} width={400} height={400} alt="drawing of matthieu" loading="lazy" className="lg:relative md:static rounded-full border-8 border-black" />
+              <Image src={pfp} width={450} height={450} alt="drawing of matthieu" loading="lazy" className="lg:relative md:static rounded-full border-8 border-black" />
             </motion.div>
           </div>
         </Container>
@@ -97,19 +97,15 @@ export default function Home() {
                 </div>
                 <Image onMouseLeave={handleHoverPicture} onMouseEnter={handleHoverPicture} src={prof} width={380} height={380} style={{borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"}} alt="photograph of Matt's face" loading="lazy" className="lg:relative md:static border-8 border-black bg-[url('../public/images/test.png')] mix-blend-overlay" />
               </motion.div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-8">
                 <h1 className="text-6xl font-bold">About Me</h1>
                 <h2 className="text-3xl font-semibold">Hi, I'm Matt!</h2>
-                <h2 className="text-xl font-semibold"> I'm a full-stack engineer and web designer currently 
-                  <br /> working in Montreal. After spending most of my life <br /> 
-                  cooking and writing, I decided to take my love of <br />
-                  tech to the next level and enrolled in Concordia University's <br /> 
-                  immersive Full-Stack development program. <br />
-                  It proved to be one of the best decisions I ever made. <br />
-                  I have since dedicated myself to applying my creativity <br />
-                  and my love of technology toward a career in development.
-
-                  
+                <h2 className="text-xl font-semibold"> I'm a full-stack engineer and web designer currently working in Montreal. <br /> 
+                  After spending most of my life cooking and writing, I decided to take my love<br /> 
+                  of tech to the next level and enrolled in Concordia University's immersive <br /> 
+                  Full-Stack development program. It proved to be one of the best decisions<br />
+                  I ever made. I have since dedicated myself to applying my creativit and my <br />
+                  love of technology toward a career in development.
                   </h2>
               </div>
             </div>
@@ -128,9 +124,14 @@ export default function Home() {
       </div>
       <div id="contact" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Form />
+        <div id="cv" className="flex mt-6">
         <Link href="/assets/MF-CV-EN.pdf" target="__blank">
-          <Button classes="rounded-full m-4">View my CV</Button>
+          <Button classes="rounded-full m-4 !bg-[#FBEAFF] hover:!bg-[#F9F871]">View my CV</Button>
         </Link>
+        <a download href="/assets/MF-CV-EN.pdf">
+          <Button classes="rounded-full m-4 !bg-[#FBEAFF] hover:!bg-[#F9F871]">Download CV</Button>
+        </a>
+        </div>
       </div>
       
     </main>

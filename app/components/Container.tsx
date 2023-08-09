@@ -15,7 +15,7 @@ export default function Container({
           opacity: 0,
           x: 150,
       }}
-      viewport={{ amount: 0.6 }}>
+      viewport={{ amount: 0.7 }}>
           {children}
       </motion.div>
 

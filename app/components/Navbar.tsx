@@ -3,15 +3,15 @@ import Image from 'next/image'
 
 export default function Navbar() {
   return (
-    <nav className='bg-[#FBEAFF] border-y-4 border-black p-1 flex justify-between flex-col items-center z-50 md:flex-row sticky top-0 '>
+    <nav className='bg-[#FBEAFF] border-y-4 border-black p-1 flex justify-between items-center z-50 sticky top-0'>
         <div className='flex items-center'>
-        {/* add Logo here */}
-        <h1 className='text-2xl font-bold text-black group transition duration-300 ml-3'>
-            <Link href="/">Home</Link>
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black"></span>
-        </h1>
+          {/* add Logo here */}
+          <h1 className='text-2xl font-bold text-black group transition duration-300 ml-3'>
+              <Link href="/">Home</Link>
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black"></span>
+          </h1>
         </div>
-        <div className='flex'>
+        <div className='flex lg:flex-row md:flex-col'>
           <h1 className='text-2xl text-black p-4 group transition duration-300'>
             <Link href="#about">About</Link>
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black"></span>
