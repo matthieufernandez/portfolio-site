@@ -25,7 +25,7 @@ export default function Navbar() {
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black"></span>
           </h1>
           <h1 className='text-2xl text-black p-4 group transition duration-300'>
-            <Link href="https://github.com/matthieufernandez" target="_blank">CV</Link>
+            <Link href="#contact">CV</Link>
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-black"></span>
           </h1>
           <h1 className='text-2xl text-black p-4 group transition duration-300'>

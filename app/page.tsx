@@ -6,8 +6,9 @@ import Image from 'next/image'
 import pfp from '../public/images/drawing-me.jpg'
 import prof from '../public/images/me-professional-removebg.png'
 import { motion } from "framer-motion";
+import Form from "./components/Form";
 import { useState, useEffect } from 'react'
-
+import Link from "next/link";
 
 export default function Home() {
 
@@ -20,8 +21,9 @@ export default function Home() {
   }
 
   return (
-    <main className="max-w-full overflow-x-hidden">
-      <div id="splash" className="bg-[#D0E7FF] flex flex-col justify-center items-center px-4 py-10 min-h-[70vh] gap-3">
+    <main className="max-w-full overflow-x-hidden bg-gradient-to-b from-[#D0E7FF] to-[#FF6F91]">
+      
+      <div id="splash" className="flex flex-col justify-center items-center px-4 py-10 min-h-[70vh] gap-3 ">
         <Container>
           <div className="flex items-center gap-9 lg:flex-row md: flex-col">
             <motion.div className="flex flex-col" 
@@ -61,7 +63,7 @@ export default function Home() {
           </div>
         </Container>
       </div>
-      <div id="about" className="bg-[#D0E7FF] flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
+      <div id="about" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Container>
           <div className="flex flex-row">
             <motion.div style={{borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"}} 
@@ -97,8 +99,8 @@ export default function Home() {
               </motion.div>
               <div className="flex flex-col gap-4">
                 <h1 className="text-6xl font-bold">About Me</h1>
-                <h2 className="text-4xl font-semibold">Hi, I'm Matt!</h2>
-                <h2 className="text-2xl font-semibold"> I'm a full-stack engineer and web designer currently 
+                <h2 className="text-3xl font-semibold">Hi, I'm Matt!</h2>
+                <h2 className="text-xl font-semibold"> I'm a full-stack engineer and web designer currently 
                   <br /> working in Montreal. After spending most of my life <br /> 
                   cooking and writing, I decided to take my love of <br />
                   tech to the next level and enrolled in Concordia University's <br /> 
@@ -113,7 +115,7 @@ export default function Home() {
             </div>
         </Container>
       </div>
-      <div id="portfolio" className="bg-[#D0E7FF] flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
+      <div id="portfolio" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Container>
           <h1>
             THIS IS JUST A TEST
@@ -124,6 +126,13 @@ export default function Home() {
           <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint vitae aliquam labore consequuntur mollitia reiciendis odio voluptatibus quidem laudantium suscipit beatae magni doloribus ad tempore optio dicta illo ab voluptas incidunt natus, et soluta nostrum harum excepturi. Odit eos doloribus quam deleniti debitis tempora, rerum sapiente excepturi ipsum officiis nulla veniam nam? Inventore accusamus cupiditate adipisci, voluptatum omnis voluptates illum explicabo consequuntur voluptate consectetur vitae sunt sapiente, rerum est dolores impedit molestias nisi ea laboriosam reprehenderit culpa ratione necessitatibus, iure itaque. Consequuntur magni aperiam sint laudantium nesciunt! Soluta omnis ut aperiam animi officia doloribus illo, reprehenderit unde autem accusantium minima!</h2>
         </Container>
       </div>
+      <div id="contact" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
+        <Form />
+        <Link href="/assets/MF-CV-EN.pdf" target="__blank">
+          <Button classes="rounded-full m-4">View my CV</Button>
+        </Link>
+      </div>
+      
     </main>
   )
 }
@@ -138,3 +147,7 @@ export default function Home() {
 // left-[4.5rem] top-[3rem]
 
 // bg-gradient-to-tr from-purple-600
+
+
+
+        // border-pink-300 border-solid border-4

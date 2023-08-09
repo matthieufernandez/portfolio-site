@@ -3,6 +3,8 @@
   import { Arimo } from 'next/font/google'
   import Navbar from './components/Navbar'
 
+
+
   const arimo = Arimo({ 
     subsets: ['latin'], 
     // weight: ['400', '700'], 
