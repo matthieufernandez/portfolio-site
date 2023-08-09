@@ -4,15 +4,24 @@ import Button from "./components/Button";
 import Container from "./components/Container";
 import Image from 'next/image'
 import pfp from '../public/images/drawing-me.jpg'
-import prof from '../public/images/me-professional.jpeg'
+import prof from '../public/images/me-professional-removebg.png'
 import { motion } from "framer-motion";
+import { useState, useEffect } from 'react'
 
 
 export default function Home() {
 
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleHoverPicture = (e: any) => {
+    e.preventDefault()
+    setIsHovered(!isHovered)
+    console.log(isHovered)
+  }
+
   return (
     <main className="max-w-full overflow-x-hidden">
-      <div id="splash" className="bg-[#D0E7FF] flex flex-col items-center px-4 py-10 min-h-[70vh] gap-3">
+      <div id="splash" className="bg-[#D0E7FF] flex flex-col justify-center items-center px-4 py-10 min-h-[70vh] gap-3">
         <Container>
           <div className="flex items-center gap-9 lg:flex-row md: flex-col">
             <motion.div className="flex flex-col" 
@@ -30,7 +39,8 @@ export default function Home() {
                 </Button>
               </div>
             </motion.div>
-            <motion.div animate={{
+            <motion.div 
+          whileInView={{
               opacity: 1,
               x: 50,
               y: 50,
@@ -44,6 +54,7 @@ export default function Home() {
           }}
           transition={{
               duration: .3,
+              delay: .2,
           }}>
               <Image src={pfp} width={400} height={400} alt="drawing of matthieu" loading="lazy" className="lg:relative md:static rounded-full border-8 border-black" />
             </motion.div>
@@ -53,7 +64,8 @@ export default function Home() {
       <div id="about" className="bg-[#D0E7FF] flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Container>
           <div className="flex flex-row">
-            <motion.div whileInView={{
+            <motion.div style={{borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"}} 
+              whileInView={{
                   opacity: 1,
                   x: -30,
                   y: -50,
@@ -67,13 +79,36 @@ export default function Home() {
               }}
               transition={{
                   duration: .3,
-                  delay: .3
+                  // delay: .3
+              }} 
+              whileHover={{
+                rotate: -10,
+                scale: 1.1,
+                transition: {
+                  delay: 0,
+                }
               }}>
-                <Image src={prof} width={380} height={380} style={{borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"}} alt="icon for the city of montreal" loading="lazy" className="lg:relative md:static border-8 border-black" />
+                <div style={isHovered ? {} : {display: "none"}} className="flex w-5">
+                  <div className="absolute p-4 bg-[#FF6F91] rounded-tr-lg rounded-tl-lg rounded-bl-lg top-[-5rem] border-4 border-black shadow-[6px_6px_0_black]">
+                    <h3 className="text-xl font-semibold">HELLO 😁</h3>
+                  </div>
+                </div>
+                <Image onMouseLeave={handleHoverPicture} onMouseEnter={handleHoverPicture} src={prof} width={380} height={380} style={{borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"}} alt="photograph of Matt's face" loading="lazy" className="lg:relative md:static border-8 border-black bg-[url('../public/images/test.png')] mix-blend-overlay" />
               </motion.div>
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-4">
                 <h1 className="text-6xl font-bold">About Me</h1>
-                <h2 className="text-2xl font-semibold">Full Stack Developer proficient in essential front-end and server-side languages. <br />I'm capable of researching and implementing solutions tailored to a client's particular needs, <br />especially with regard to performance and scalability. <br />I excel in producing efficient and elegant code that implements DRY principles. <br />Don't hesitate to reach out to me; I'd love to hear from you.</h2>
+                <h2 className="text-4xl font-semibold">Hi, I'm Matt!</h2>
+                <h2 className="text-2xl font-semibold"> I'm a full-stack engineer and web designer currently 
+                  <br /> working in Montreal. After spending most of my life <br /> 
+                  cooking and writing, I decided to take my love of <br />
+                  tech to the next level and enrolled in Concordia University's <br /> 
+                  immersive Full-Stack development program. <br />
+                  It proved to be one of the best decisions I ever made. <br />
+                  I have since dedicated myself to applying my creativity <br />
+                  and my love of technology toward a career in development.
+
+                  
+                  </h2>
               </div>
             </div>
         </Container>
@@ -102,4 +137,4 @@ export default function Home() {
 
 // left-[4.5rem] top-[3rem]
 
-// bg-[#D0E7FF] flex flex-col items-center px-4 py-10 min-h-screen gap-3
+// bg-gradient-to-tr from-purple-600
