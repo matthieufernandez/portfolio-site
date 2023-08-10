@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Form from "./components/Form";
 import { useState, useEffect } from 'react'
 import Link from "next/link";
+import InfoCard from "./components/projects/InfoCard";
 
 export default function Home() {
 
@@ -113,6 +114,7 @@ export default function Home() {
       </div>
       <div id="portfolio" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Container>
+          <InfoCard />
           <h1>
             THIS IS JUST A TEST
           </h1>
