@@ -2,9 +2,9 @@
 
 import React, { useEffect } from 'react'
 import Container from './Container'
-import Button from './Button'
 import { useState } from 'react'
 import { FaSpinner } from 'react-icons/fa6'
+import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { sendContactForm } from '../lib/api'
 
 
@@ -23,10 +23,6 @@ export default function Form() {
     const [isError, setIsError] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    useEffect(() => {
-        console.log(success);
-    })
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => setForm((prev) => ({
         ...prev,
         values: {
@@ -40,12 +36,19 @@ export default function Form() {
         setIsLoading(true);
 
         try {
-            await sendContactForm(values).then((res) => setIsLoading(false));
-            setSuccess(true);
+            await sendContactForm(values)
+            .then(res => setIsLoading(false))
         } catch (error) {
             setIsLoading(false),
             setIsError(true);
         }
+
+        setForm(initState);
+        if (!isError) {
+            setSuccess(true);
+        }
+
+        console.log(success)
     }
 
   return (
@@ -86,16 +89,26 @@ export default function Form() {
                         rows={5}
                          />
                     </div>
-                    <div className='self-center m-2'>
-                    <button 
-                    className=" bg-[#FF6F91] hover:bg-[#F9F871] disabled:cursor-not-allowed disabled:scale-95 disabled:opacity-75 disabled:bg-slate-300 disabled:shadow-none hover:scale-95 hover:shadow-[2px_2px_0_black] transition ease-in-out duration-110 text-black font-bold w-48 py-2 px-4 shadow-[6px_6px_0_black] border-4 border-black"
-                    disabled={
-                        !values.name || !values.email  || !values.message
-                    }
-                    >
-                        {success ? (<h3>Success!</h3>) : isLoading ? (<div className='flex justify-center'><FaSpinner className="animate-spin" /></div>) : (<h3>Submit</h3>)}
-                    </button>
-                    </div>
+                    {success ? <div className='self-center m-2 flex '>
+                        <button 
+                        className="bg-lime-400 text-black font-bold w-48 py-2 px-4 border-4 border-black" 
+                        disabled={success}>
+                            <div className='flex justify-center items-center gap-2'>
+                            <MdOutlineMarkEmailRead className="scale-[1.3]" /> 
+                            <h3>Message sent!</h3>
+                            </div>
+                        </button>
+                    </div> : <div className='self-center m-2'>
+                        <button 
+                        className=" bg-[#FF6F91] hover:bg-[#F9F871] disabled:cursor-not-allowed disabled:scale-95 disabled:opacity-75 disabled:bg-slate-300 disabled:shadow-none hover:scale-95 hover:shadow-[2px_2px_0_black] transition ease-in-out duration-110 text-black font-bold w-48 py-2 px-4 shadow-[6px_6px_0_black] border-4 border-black"
+                        disabled={
+                            !values.name || !values.email  || !values.message
+                        }
+                        >
+                            {isLoading ? (<div className='flex justify-center'><FaSpinner className="animate-spin" /></div>) : (<h3>Submit</h3>)}
+                        </button>
+                        </div>}
+                        
                 </form>
             </div>
         </Container>
