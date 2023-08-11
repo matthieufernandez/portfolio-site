@@ -1,4 +1,5 @@
 type Tech = {
+    id: number,
     name: string,
     img: string,
 }
