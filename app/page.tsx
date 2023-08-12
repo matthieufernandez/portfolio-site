@@ -10,6 +10,7 @@ import Form from "./components/Form";
 import { useState, useEffect } from 'react'
 import Link from "next/link";
 import InfoCard from "./components/projects/InfoCard";
+import { frontend, backend, devops, languages, tools } from './lib/stack'
 
 export default function Home() {
 
@@ -111,19 +112,52 @@ export default function Home() {
               </div>
             </div>
         </Container>
-      </div>
-      <div id="portfolio" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
-        <Container>
-          <InfoCard />
-          <h1>
-            THIS IS JUST A TEST
-          </h1>
-          <h2>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt sequi incidunt officia eius. Cupiditate, tempore.
-          </h2>
-          <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint vitae aliquam labore consequuntur mollitia reiciendis odio voluptatibus quidem laudantium suscipit beatae magni doloribus ad tempore optio dicta illo ab voluptas incidunt natus, et soluta nostrum harum excepturi. Odit eos doloribus quam deleniti debitis tempora, rerum sapiente excepturi ipsum officiis nulla veniam nam? Inventore accusamus cupiditate adipisci, voluptatum omnis voluptates illum explicabo consequuntur voluptate consectetur vitae sunt sapiente, rerum est dolores impedit molestias nisi ea laboriosam reprehenderit culpa ratione necessitatibus, iure itaque. Consequuntur magni aperiam sint laudantium nesciunt! Soluta omnis ut aperiam animi officia doloribus illo, reprehenderit unde autem accusantium minima!</h2>
-        </Container>
-      </div>
+        <div id="portfolio" className="flex gap-4 flex-wrap justify-center items-center px-4 py-10 min-h-[90vh]">
+          <Container>
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="font-semibold text-2xl pb-4 z-10">
+                  Frontend
+              </h1>
+              <InfoCard stack={frontend}/>
+            </div>
+          </Container>
+          <Container>
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="font-semibold text-xl">
+                  Backend
+              </h1>
+              <InfoCard stack={backend}/>
+                
+            </div>
+          </Container>
+          <Container>
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="font-semibold text-xl">
+                    Devops
+              </h1>
+              <InfoCard stack={devops}/>
+            </div>
+          </Container>
+          <Container>
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="font-semibold text-xl">
+                  Languages
+              </h1>
+              <InfoCard stack={languages}/>
+                
+            </div>
+          </Container>
+          <Container>
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="font-semibold text-xl">
+                  Tools
+              </h1>
+              <InfoCard stack={tools}/>
+                
+            </div>
+          </Container>
+        </div>
+      </div>  
       <div id="contact" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Form />
         <div id="cv" className="flex mt-6">
