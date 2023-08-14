@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Navbar() {
   return (
-    <nav className='bg-[#FBEAFF] border-y-4 border-black p-1 flex justify-between items-center z-50 sticky top-0'>
+    <nav className='bg-[#FBEAFF] border-y-4 border-black p-1 flex justify-between items-center z-50 sticky top-0 md:hidden'>
         <div className='flex items-center'>
           {/* add Logo here */}
           <h1 className='text-2xl font-bold text-black group transition duration-300 ml-3'>

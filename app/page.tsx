@@ -19,7 +19,6 @@ export default function Home() {
   const handleHoverPicture = (e: any) => {
     e.preventDefault()
     setIsHovered(!isHovered)
-    console.log(isHovered)
   }
 
   return (
@@ -101,10 +100,10 @@ export default function Home() {
               </motion.div>
               <div className="flex flex-col gap-8">
                 <h1 className="text-6xl font-bold">About Me</h1>
-                <h2 className="text-3xl font-semibold">Hi, I'm Matt!</h2>
-                <h2 className="text-xl font-semibold"> I'm a full-stack engineer and web designer currently working in Montreal. <br /> 
+                <h2 className="text-3xl font-semibold">Hi, I&apos;m Matt!</h2>
+                <h2 className="text-xl font-semibold"> I&apos;m a full-stack engineer and web designer currently working in Montreal. <br /> 
                   After spending most of my life cooking and writing, I decided to take my love<br /> 
-                  of tech to the next level and enrolled in Concordia University's immersive <br /> 
+                  of tech to the next level and enrolled in Concordia University&apos;s immersive <br /> 
                   Full-Stack development program. It proved to be one of the best decisions<br />
                   I ever made. I have since dedicated myself to applying my creativit and my <br />
                   love of technology toward a career in development.
@@ -112,10 +111,11 @@ export default function Home() {
               </div>
             </div>
         </Container>
+
         <div id="portfolio" className="flex gap-4 flex-wrap justify-center items-center px-4 py-10 min-h-[90vh]">
           <Container>
             <div className="flex flex-col justify-center items-center">
-              <h1 className="font-semibold text-2xl pb-4 z-10">
+              <h1 className="font-bold text-2xl pb-4 z-10">
                   Frontend
               </h1>
               <InfoCard stack={frontend}/>
@@ -123,7 +123,7 @@ export default function Home() {
           </Container>
           <Container>
             <div className="flex flex-col justify-center items-center">
-              <h1 className="font-semibold text-xl">
+              <h1 className="font-bold text-2xl pb-4 z-10">
                   Backend
               </h1>
               <InfoCard stack={backend}/>
@@ -132,7 +132,7 @@ export default function Home() {
           </Container>
           <Container>
             <div className="flex flex-col justify-center items-center">
-              <h1 className="font-semibold text-xl">
+              <h1 className="font-bold text-2xl pb-4 z-10">
                     Devops
               </h1>
               <InfoCard stack={devops}/>
@@ -140,7 +140,7 @@ export default function Home() {
           </Container>
           <Container>
             <div className="flex flex-col justify-center items-center">
-              <h1 className="font-semibold text-xl">
+              <h1 className="font-bold text-2xl pb-4 z-10">
                   Languages
               </h1>
               <InfoCard stack={languages}/>
@@ -149,7 +149,7 @@ export default function Home() {
           </Container>
           <Container>
             <div className="flex flex-col justify-center items-center">
-              <h1 className="font-semibold text-xl">
+              <h1 className="font-bold text-2xl pb-4 z-10">
                   Tools
               </h1>
               <InfoCard stack={tools}/>
