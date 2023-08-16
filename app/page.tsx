@@ -2,6 +2,8 @@
 
 import Button from "./components/Button";
 import Container from "./components/Container";
+import InfoCard from "./components/projects/InfoCard";
+import ProjectList from "./components/projects/ProjectList";
 import Image from 'next/image'
 import pfp from '../public/images/drawing-me.jpg'
 import prof from '../public/images/me-professional-removebg.png'
@@ -9,7 +11,6 @@ import { motion } from "framer-motion";
 import Form from "./components/Form";
 import { useState, useEffect } from 'react'
 import Link from "next/link";
-import InfoCard from "./components/projects/InfoCard";
 import { frontend, backend, devops, languages, tools } from './lib/stack'
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
     <main className="max-w-full overflow-x-hidden bg-gradient-to-b from-[#D0E7FF] to-[#FF6F91]">
       
       <div id="splash" className="flex flex-col justify-center items-center px-4 py-10 min-h-[70vh] gap-3 ">
-        <Container>
+        <Container classes="">
           <div className="flex items-center gap-9 lg:flex-row md: flex-col">
             <motion.div className="flex flex-col" 
               transition={{
@@ -65,7 +66,7 @@ export default function Home() {
         </Container>
       </div>
       <div id="about" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
-        <Container>
+        <Container classes="">
           <div className="flex flex-row">
             <motion.div style={{borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%"}} 
               whileInView={{
@@ -111,9 +112,10 @@ export default function Home() {
               </div>
             </div>
         </Container>
+        </div>
 
         <div id="portfolio" className="flex gap-4 flex-wrap justify-center items-center px-4 py-10 min-h-[90vh]">
-          <Container>
+          <Container classes="alt">
             <div className="flex flex-col justify-center items-center">
               <h1 className="font-bold text-2xl pb-4 z-10">
                   Frontend
@@ -121,7 +123,7 @@ export default function Home() {
               <InfoCard stack={frontend}/>
             </div>
           </Container>
-          <Container>
+          <Container classes="alt">
             <div className="flex flex-col justify-center items-center">
               <h1 className="font-bold text-2xl pb-4 z-10">
                   Backend
@@ -130,7 +132,7 @@ export default function Home() {
                 
             </div>
           </Container>
-          <Container>
+          <Container classes="alt">
             <div className="flex flex-col justify-center items-center">
               <h1 className="font-bold text-2xl pb-4 z-10">
                     Devops
@@ -138,7 +140,7 @@ export default function Home() {
               <InfoCard stack={devops}/>
             </div>
           </Container>
-          <Container>
+          <Container classes="alt">
             <div className="flex flex-col justify-center items-center">
               <h1 className="font-bold text-2xl pb-4 z-10">
                   Languages
@@ -147,7 +149,7 @@ export default function Home() {
                 
             </div>
           </Container>
-          <Container>
+          <Container classes="alt">
             <div className="flex flex-col justify-center items-center">
               <h1 className="font-bold text-2xl pb-4 z-10">
                   Tools
@@ -156,8 +158,8 @@ export default function Home() {
                 
             </div>
           </Container>
-        </div>
-      </div>  
+      </div>
+        <ProjectList />
       <div id="contact" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Form />
         <div id="cv" className="flex mt-6">

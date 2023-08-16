@@ -53,7 +53,7 @@ export default function Form() {
 
   return (
     <div className='flex justify-center items-center'>
-        <Container>
+        <Container classes="alt">
             <div className='p-4 w-[30rem]'>
                 
                 <form onSubmit={handleSubmit} className='flex flex-col gap-6'>
@@ -65,7 +65,7 @@ export default function Form() {
                         name="name" value={values.name}
                         onChange={handleChange} 
                         placeholder='Name'
-                        className='p-2' 
+                        className='p-2 border-slate-300 border-2' 
                         />
                     </div>
                     <div className='flex flex-col'>
@@ -75,7 +75,7 @@ export default function Form() {
                         name="email" value={values.email} 
                         onChange={handleChange} 
                         placeholder='Email'
-                        className='p-2'
+                        className='p-2 border-slate-300 border-2'
                          />
                     </div>
                     <div className='flex flex-col'>
@@ -85,7 +85,7 @@ export default function Form() {
                         value={values.message} 
                         onChange={handleChange} 
                         placeholder='Message'
-                        className='p-2'
+                        className='p-2 border-slate-300 border-2'
                         rows={5}
                          />
                     </div>
