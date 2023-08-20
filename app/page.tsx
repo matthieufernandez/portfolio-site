@@ -12,6 +12,7 @@ import Form from "./components/Form";
 import { useState, useEffect } from 'react'
 import Link from "next/link";
 import { frontend, backend, devops, languages, tools } from './lib/stack'
+import { projects } from "./lib/projects";
 
 export default function Home() {
 
@@ -159,7 +160,7 @@ export default function Home() {
             </div>
           </Container>
       </div>
-        <ProjectList />
+        <ProjectList projects={projects}/>
       <div id="contact" className="flex flex-col justify-center items-center px-4 py-10 min-h-[90vh]">
         <Form />
         <div id="cv" className="flex mt-6">
