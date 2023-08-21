@@ -1,34 +1,42 @@
 "use client"
 
-import { motion } from 'framer-motion'
+import { motion, scroll } from 'framer-motion'
 import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6'
 
 type Props = {
   projects: Projects;
 }
 
 export default function ProjectList( {projects}: Props ) {
-  const [width, setWidth] = useState(0);
-  const carousel = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    console.log(carousel.current)
-  }, [])
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex( (prevIndex) => prevIndex + 1 === projects.length ? 0 : prevIndex + 1 )
+  }
+
+  const handlePrevious = () => {
+    setCurrentIndex( (prevIndex) => prevIndex - 1 < 0 ? projects.length - 1 : prevIndex - 1 )
+  }
+
+  const handleClick = (index: number) => {
+    setCurrentIndex(index);
+  }
+
 
   return (
     <div>
-      <motion.div ref={carousel} className="carousel mx-[20%] cursor-grab overflow-hidden p-4">
-        <motion.div drag="x" dragConstraints={{right: 0}} className="inner-carouse flex gap-5">
-          {projects.map(project => {
-            return(
-              <motion.div key={project.id} className="flex min-h-[30rem] min-w-[26rem]">
-                <Image src={project.img} loading="lazy" alt={project.description} width={450} height={600} className="m-4 border-4 border-black shadow-[6px_6px_0_black] pointer-events-none"/>
-              </motion.div>
-            )
-          })}
-        </motion.div>
-      </motion.div>
+      <div className="carousel">
+        <div className="inner-carousel flex">
+          <FaChevronLeft onClick={handlePrevious} />
+          <Image src={`${projects[currentIndex === 0 ? projects.length - 1 : currentIndex - 1].img}`} alt="something" width={300} height={300} />
+          <Image src={`${projects[currentIndex].img}`} alt="something" width={500} height={500} />
+          <Image src={`${projects[currentIndex === projects.length - 1 ? 0 : currentIndex + 1].img}`} alt="something" width={300} height={300} />
+          <FaChevronRight onClick={handleNext}/>
+        </div>
+      </div>
     </div>
   )
 }
