@@ -1,8 +1,11 @@
 import React from 'react'
 
-export default function ProjectModal() {
+type Props = {
+  project: Project;
+}
 
-    
+export default function ProjectModal({project}: Props) {
+
   return (
     <div>ProjectModal</div>
   )

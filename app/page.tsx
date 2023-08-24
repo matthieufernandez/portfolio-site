@@ -84,7 +84,6 @@ export default function Home() {
               }}
               transition={{
                   duration: .3,
-                  // delay: .3
               }} 
               whileHover={{
                 rotate: -10,
