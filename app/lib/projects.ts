@@ -20,7 +20,7 @@ export const projects: Projects = [
         name: "REST game",
         description: "Something something something",
         link: "https://github.com/matthieufernandez/rest-game",
-        img: "/images/project-images/rest-game.jpg",
+        img: "/images/project-images/REST.png",
         video: null
     },
     {
@@ -36,7 +36,7 @@ export const projects: Projects = [
         name: "Foodie Friend",
         description: "Something something something",
         link: "https://github.com/matthieufernandez/foodie-friend",
-        img: "/images/project-images/foodie-friend.png",
+        img: "/images/project-images/FOODIE.png",
         video: null
     },
     {
